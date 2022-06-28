@@ -1,0 +1,75 @@
+LOG 1644624721762 [L0]: [Sent at 1644624721762] aborted
+LOG 1644624721768 [L0]: [Received at 1644624721767] ( START kiosk.knightthrough_9x9-1644624721762 white (( role white ) ( role black ) ( succ 1 2 ) ( succ 2 3 ) ( succ 3 4 ) ( succ 4 5 ) ( succ 5 6 ) ( succ 6 7 ) ( succ 7 8 ) ( succ 8 9 ) ( succ 9 10 ) ( smallereq 1 10 ) ( <= ( smallereq 1 ?y ) ( succ ?y ?z ) ) ( <= ( smallereq ?x ?y ) ( succ ?x1 ?x ) ( succ ?y1 ?y ) ( smallereq ?x1 ?y1 ) ) ( <= ( xcoord ?x ) ( width ?w ) ( smallereq ?x ?w ) ) ( <= ( ycoord ?y ) ( height ?h ) ( smallereq ?y ?h ) ) ( <= ( forward white ?y1 ?y2 ) ( succ ?y1 ?y2 ) ( ycoord ?y2 ) ) ( <= ( forward black ?y1 ?y2 ) ( succ ?y2 ?y1 ) ( ycoord ?y1 ) ) ( <= ( neighbor ?x1 ?x2 ) ( succ ?x1 ?x2 ) ( xcoord ?x2 ) ) ( <= ( neighbor ?x1 ?x2 ) ( succ ?x2 ?x1 ) ( xcoord ?x1 ) ) ( <= ( secondneighbor ?x1 ?x2 ) ( succ ?x1 ?x3 ) ( succ ?x3 ?x2 ) ( xcoord ?x2 ) ) ( <= ( secondneighbor ?x1 ?x2 ) ( succ ?x3 ?x1 ) ( succ ?x2 ?x3 ) ( xcoord ?x2 ) ) ( <= ( cell ?x ?y ) ( xcoord ?x ) ( ycoord ?y ) ) ( <= ( distinctCell ?x1 ?y1 ?x2 ?y2 ) ( cell ?x1 ?y1 ) ( cell ?x2 ?y2 ) ( distinct ?x1 ?x2 ) ) ( <= ( distinctCell ?x1 ?y1 ?x2 ?y2 ) ( cell ?x1 ?y1 ) ( cell ?x2 ?y2 ) ( distinct ?y1 ?y2 ) ) ( opponent white black ) ( opponent black white ) ( <= ( base ( cell ?x ?y ?p ) ) ( cell ?x ?y ) ( role ?p ) ) ( <= ( base ( control ?p ) ) ( role ?p ) ) ( <= ( input ?p noop ) ( role ?p ) ) ( <= ( input ?p ( move ?x1 ?y1 ?x2 ?y2 ) ) ( xcoord ?x ) ( forward ?p ?y1 ?ymiddle ) ( forward ?p ?ymiddle ?y2 ) ( neighbor ?x1 ?x2 ) ) ( <= ( input ?p ( move ?x1 ?y1 ?x2 ?y2 ) ) ( xcoord ?x ) ( forward ?p ?y1 ?y2 ) ( secondneighbor ?x1 ?x2 ) ) ( <= ( input ?p ( move ?x1 ?y1 ?x2 ?y2 ) ) ( neighbor ?x1 ?x2 ) ( forward ?p ?y1 ?y2 ) ) ( <= ( init ( cell ?x 1 white ) ) ( xcoord ?x ) ) ( <= ( init ( cell ?x 2 white ) ) ( xcoord ?x ) ) ( <= ( init ( cell ?x ?y black ) ) ( xcoord ?x ) ( height ?y ) ) ( <= ( init ( cell ?x ?y black ) ) ( xcoord ?x ) ( height ?h ) ( succ ?y ?h ) ) ( init ( control white ) ) ( <= ( cellEmpty ?x ?y ) ( cell ?x ?y ) ( not ( true ( cell ?x ?y white ) ) ) ( not ( true ( cell ?x ?y black ) ) ) ) ( <= ( legal ?p ( move ?x1 ?y1 ?x2 ?y2 ) ) ( true ( control ?p ) ) ( true ( cell ?x1 ?y1 ?p ) ) ( forward ?p ?y1 ?ymiddle ) ( forward ?p ?ymiddle ?y2 ) ( neighbor ?x1 ?x2 ) ( cellEmpty ?x2 ?y2 ) ) ( <= ( legal ?p ( move ?x1 ?y1 ?x2 ?y2 ) ) ( true ( control ?p ) ) ( true ( cell ?x1 ?y1 ?p ) ) ( forward ?p ?y1 ?y2 ) ( secondneighbor ?x1 ?x2 ) ( cellEmpty ?x2 ?y2 ) ) ( <= ( legal ?p ( move ?x1 ?y1 ?x2 ?y2 ) ) ( true ( control ?p ) ) ( true ( cell ?x1 ?y1 ?p ) ) ( forward ?p ?y1 ?y2 ) ( neighbor ?x1 ?x2 ) ( opponent ?p ?p2 ) ( true ( cell ?x2 ?y2 ?p2 ) ) ) ( <= ( legal ?p noop ) ( role ?p ) ( not ( true ( control ?p ) ) ) ) ( <= ( next ( cell ?x2 ?y2 ?player ) ) ( does ?player ( move ?x1 ?y1 ?x2 ?y2 ) ) ) ( <= ( next ( cell ?x3 ?y3 ?state ) ) ( true ( cell ?x3 ?y3 ?state ) ) ( does ?player ( move ?x1 ?y1 ?x2 ?y2 ) ) ( distinctCell ?x1 ?y1 ?x3 ?y3 ) ( distinctCell ?x2 ?y2 ?x3 ?y3 ) ) ( <= ( next ( control ?p ) ) ( true ( control ?p2 ) ) ( opponent ?p ?p2 ) ) ( <= ( wins white ) ( height ?h ) ( true ( cell ?x ?h white ) ) ) ( <= ( wins black ) ( true ( cell ?x 1 black ) ) ) ( <= ( goal ?p 100 ) ( wins ?p ) ) ( <= ( goal ?p 50 ) ( role ?p ) ( not ( wins white ) ) ( not ( wins black ) ) ) ( <= ( goal ?p 0 ) ( opponent ?p ?p2 ) ( wins ?p2 ) ) ( <= ( any_legal_move ?p ) ( legal ?p ?m ) ) ( <= terminal ( wins ?someone ) ) ( <= terminal ( true ( control ?p ) ) ( not ( any_legal_move ?p ) ) ) ( <= ( init ( width ?w ) ) ( width ?w ) ) ( <= ( init ( height ?h ) ) ( height ?h ) ) ( <= ( next ( width ?w ) ) ( width ?w ) ) ( <= ( next ( height ?h ) ) ( height ?h ) ) ( width 9 ) ( height 9 ) ) 30 90)
+LOG 1644624721775 [L0]: [Sent at 1644624721775] ready
+LOG 1644624721780 [L0]: [Received at 1644624721780] ( PLAY kiosk.knightthrough_9x9-1644624721762 NIL )
+LOG 1644624724144 [L0]: [Sent at 1644624724144] ( move 5 2 3 3 )
+LOG 1644624724148 [L0]: [Received at 1644624724148] ( PLAY kiosk.knightthrough_9x9-1644624721762 (( move 5 2 3 3 ) noop ) )
+LOG 1644624724153 [L0]: [Sent at 1644624724153] noop
+LOG 1644624725208 [L0]: [Received at 1644624725208] ( PLAY kiosk.knightthrough_9x9-1644624721762 (noop ( move 1 8 2 6 ) ) )
+LOG 1644624745866 [L0]: [Sent at 1644624745866] ( move 6 2 5 4 )
+LOG 1644624745872 [L0]: [Received at 1644624745871] ( PLAY kiosk.knightthrough_9x9-1644624721762 (( move 6 2 5 4 ) noop ) )
+LOG 1644624745879 [L0]: [Sent at 1644624745879] noop
+LOG 1644624747106 [L0]: [Received at 1644624747105] ( PLAY kiosk.knightthrough_9x9-1644624721762 (noop ( move 2 8 3 6 ) ) )
+LOG 1644624773147 [L0]: [Sent at 1644624773147] ( move 2 2 4 3 )
+LOG 1644624773155 [L0]: [Received at 1644624773155] ( PLAY kiosk.knightthrough_9x9-1644624721762 (( move 2 2 4 3 ) noop ) )
+LOG 1644624773161 [L0]: [Sent at 1644624773161] noop
+LOG 1644624773980 [L0]: [Received at 1644624773980] ( PLAY kiosk.knightthrough_9x9-1644624721762 (noop ( move 2 6 3 4 ) ) )
+LOG 1644624791984 [L0]: [Sent at 1644624791984] ( move 4 3 3 4 )
+LOG 1644624791989 [L0]: [Received at 1644624791988] ( PLAY kiosk.knightthrough_9x9-1644624721762 (( move 4 3 3 4 ) noop ) )
+LOG 1644624791999 [L0]: [Sent at 1644624791999] noop
+LOG 1644624792825 [L0]: [Received at 1644624792825] ( PLAY kiosk.knightthrough_9x9-1644624721762 (noop ( move 3 6 4 4 ) ) )
+LOG 1644624797197 [L0]: [Sent at 1644624797197] ( move 3 3 4 4 )
+LOG 1644624797200 [L0]: [Received at 1644624797200] ( PLAY kiosk.knightthrough_9x9-1644624721762 (( move 3 3 4 4 ) noop ) )
+LOG 1644624797207 [L0]: [Sent at 1644624797207] noop
+LOG 1644624797982 [L0]: [Received at 1644624797982] ( PLAY kiosk.knightthrough_9x9-1644624721762 (noop ( move 3 8 2 6 ) ) )
+LOG 1644624802009 [L0]: [Sent at 1644624802009] ( move 4 2 2 3 )
+LOG 1644624802013 [L0]: [Received at 1644624802012] ( PLAY kiosk.knightthrough_9x9-1644624721762 (( move 4 2 2 3 ) noop ) )
+LOG 1644624802019 [L0]: [Sent at 1644624802019] noop
+LOG 1644624802825 [L0]: [Received at 1644624802825] ( PLAY kiosk.knightthrough_9x9-1644624721762 (noop ( move 2 6 1 4 ) ) )
+LOG 1644624804697 [L0]: [Sent at 1644624804697] ( move 2 3 1 4 )
+LOG 1644624804701 [L0]: [Received at 1644624804701] ( PLAY kiosk.knightthrough_9x9-1644624721762 (( move 2 3 1 4 ) noop ) )
+LOG 1644624804707 [L0]: [Sent at 1644624804707] noop
+LOG 1644624805449 [L0]: [Received at 1644624805449] ( PLAY kiosk.knightthrough_9x9-1644624721762 (noop ( move 4 8 5 6 ) ) )
+LOG 1644624809718 [L0]: [Sent at 1644624809718] ( move 4 4 2 5 )
+LOG 1644624809722 [L0]: [Received at 1644624809721] ( PLAY kiosk.knightthrough_9x9-1644624721762 (( move 4 4 2 5 ) noop ) )
+LOG 1644624809728 [L0]: [Sent at 1644624809728] noop
+LOG 1644624810454 [L0]: [Received at 1644624810453] ( PLAY kiosk.knightthrough_9x9-1644624721762 (noop ( move 5 8 6 6 ) ) )
+LOG 1644624813199 [L0]: [Sent at 1644624813199] ( move 5 4 4 6 )
+LOG 1644624813204 [L0]: [Received at 1644624813204] ( PLAY kiosk.knightthrough_9x9-1644624721762 (( move 5 4 4 6 ) noop ) )
+LOG 1644624813214 [L0]: [Sent at 1644624813214] noop
+LOG 1644624813984 [L0]: [Received at 1644624813984] ( PLAY kiosk.knightthrough_9x9-1644624721762 (noop ( move 5 6 7 5 ) ) )
+LOG 1644624818689 [L0]: [Sent at 1644624818689] ( move 4 6 2 7 )
+LOG 1644624818694 [L0]: [Received at 1644624818694] ( PLAY kiosk.knightthrough_9x9-1644624721762 (( move 4 6 2 7 ) noop ) )
+LOG 1644624818699 [L0]: [Sent at 1644624818699] noop
+LOG 1644624819398 [L0]: [Received at 1644624819398] ( PLAY kiosk.knightthrough_9x9-1644624721762 (noop ( move 6 6 8 5 ) ) )
+LOG 1644624822418 [L0]: [Sent at 1644624822418] ( move 8 2 6 3 )
+LOG 1644624822423 [L0]: [Received at 1644624822423] ( PLAY kiosk.knightthrough_9x9-1644624721762 (( move 8 2 6 3 ) noop ) )
+LOG 1644624822432 [L0]: [Sent at 1644624822432] noop
+LOG 1644624823072 [L0]: [Received at 1644624823072] ( PLAY kiosk.knightthrough_9x9-1644624721762 (noop ( move 7 5 9 4 ) ) )
+LOG 1644624826034 [L0]: [Sent at 1644624826034] ( move 6 3 8 4 )
+LOG 1644624826038 [L0]: [Received at 1644624826038] ( PLAY kiosk.knightthrough_9x9-1644624721762 (( move 6 3 8 4 ) noop ) )
+LOG 1644624826044 [L0]: [Sent at 1644624826044] noop
+LOG 1644624826063 [L0]: [Received at 1644624826063] ( PLAY kiosk.knightthrough_9x9-1644624721762 (noop ( move 9 4 8 2 ) ) )
+LOG 1644624827983 [L0]: [Sent at 1644624827983] ( move 9 1 8 2 )
+LOG 1644624827986 [L0]: [Received at 1644624827986] ( PLAY kiosk.knightthrough_9x9-1644624721762 (( move 9 1 8 2 ) noop ) )
+LOG 1644624827994 [L0]: [Sent at 1644624827994] noop
+LOG 1644624828634 [L0]: [Received at 1644624828634] ( PLAY kiosk.knightthrough_9x9-1644624721762 (noop ( move 6 8 8 7 ) ) )
+LOG 1644624836562 [L0]: [Sent at 1644624836562] ( move 8 1 7 3 )
+LOG 1644624836568 [L0]: [Received at 1644624836568] ( PLAY kiosk.knightthrough_9x9-1644624721762 (( move 8 1 7 3 ) noop ) )
+LOG 1644624836575 [L0]: [Sent at 1644624836575] noop
+LOG 1644624836601 [L0]: [Received at 1644624836601] ( PLAY kiosk.knightthrough_9x9-1644624721762 (noop ( move 8 5 9 3 ) ) )
+LOG 1644624839220 [L0]: [Sent at 1644624839220] ( move 8 2 9 3 )
+LOG 1644624839223 [L0]: [Received at 1644624839223] ( PLAY kiosk.knightthrough_9x9-1644624721762 (( move 8 2 9 3 ) noop ) )
+LOG 1644624839231 [L0]: [Sent at 1644624839231] noop
+LOG 1644624839937 [L0]: [Received at 1644624839937] ( PLAY kiosk.knightthrough_9x9-1644624721762 (noop ( move 7 8 9 7 ) ) )
+LOG 1644624845323 [L0]: [Sent at 1644624845323] ( move 3 4 2 6 )
+LOG 1644624845326 [L0]: [Received at 1644624845326] ( PLAY kiosk.knightthrough_9x9-1644624721762 (( move 3 4 2 6 ) noop ) )
+LOG 1644624845333 [L0]: [Sent at 1644624845333] noop
+LOG 1644624845923 [L0]: [Received at 1644624845922] ( PLAY kiosk.knightthrough_9x9-1644624721762 (noop ( move 8 7 9 5 ) ) )
+LOG 1644624851550 [L0]: [Sent at 1644624851550] ( move 2 6 3 8 )
+LOG 1644624851553 [L0]: [Received at 1644624851553] ( PLAY kiosk.knightthrough_9x9-1644624721762 (( move 2 6 3 8 ) noop ) )
+LOG 1644624851561 [L0]: [Sent at 1644624851561] noop
+LOG 1644624851576 [L0]: [Received at 1644624851576] ( PLAY kiosk.knightthrough_9x9-1644624721762 (noop ( move 9 5 8 3 ) ) )
+LOG 1644624856399 [L0]: [Sent at 1644624856399] ( move 3 8 2 9 )
+LOG 1644624856407 [L0]: [Received at 1644624856406] ( STOP kiosk.knightthrough_9x9-1644624721762 (( move 3 8 2 9 ) noop ) )
+LOG 1644624856408 [L0]: [Sent at 1644624856408] done
